@@ -1,18 +1,18 @@
 import "./App.css";
-import { BrowserRouter as Router } from "react-router-dom"; // Only need Router and Link here
+import { HashRouter } from "react-router-dom";
 import AppRoutes from "./Routes";
 import NavComponent from "./components/Nav/NavComponent";
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <header>
         <NavComponent />
       </header>
       <main>
         <AppRoutes />
       </main>
-    </Router>
+    </HashRouter>
   );
 }
 
