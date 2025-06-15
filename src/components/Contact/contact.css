@@ -1,0 +1,11 @@
+.contacts-container {
+  width: 100%;
+  max-width: 1280px;
+
+  list-style: none;
+
+  .contact-icon {
+    width: 85px;
+    height: 85px;
+  }
+}
