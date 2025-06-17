@@ -12,6 +12,8 @@
 
   list-style: none;
 
+  padding-left: 0;
+
   a {
     color: #3d1860;
     padding: 0.825rem 1.5rem;

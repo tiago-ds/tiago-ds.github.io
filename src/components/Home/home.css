@@ -1,5 +1,16 @@
 .profile-image {
-  width: 350px;
+  width: 150px;
   border-radius: 50%;
-  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .profile-image {
+    width: 270px;
+  }
+}
+
+@media (min-width: 1199px) {
+  .profile-image {
+    width: 350px;
+  }
 }

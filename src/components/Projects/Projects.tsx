@@ -49,8 +49,8 @@ const Projects = () => {
 
   return (
     <div className="d-flex flex-column align-items-center main-section m-5">
-      <h2 className="align-self-start title-text">Projects</h2>
-      <div className="projects-container mt-5">
+      <h2 className="align-self-md-start title-text">Projects</h2>
+      <div className="projects-container flex-column flex-md-row mt-3 mt-md-5">
         {projects.map((project) => (
           <ProjectCard
             key={project.name}

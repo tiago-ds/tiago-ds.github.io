@@ -33,7 +33,7 @@ export default function Contact() {
   return (
     <div className="main-section m-5 d-flex flex-column align-items-center">
       <h2 className="title-text">Contact</h2>
-      <ul className="contacts-container mt-5 d-flex flex-row gap-5 align-self-center">
+      <ul className="contacts-container mt-5 d-flex flex-column flex-md-row gap-5 align-self-center pl-0">
         {contacts.map((contact) => (
           <ContactIcon
             icon={contact.icon}

@@ -18,7 +18,7 @@ export default function NavComponent() {
   ];
 
   return (
-    <ul className="nav-bar d-flex justify-content-center align-items-center gap-5">
+    <ul className="nav-bar d-flex justify-content-center align-items-center gap-3 gap-lg-5">
       {NAV.map(({ name, path }) => {
         return <NavItemComponent name={name} path={path} />;
       })}

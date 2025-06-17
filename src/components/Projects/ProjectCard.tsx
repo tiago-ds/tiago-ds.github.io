@@ -16,14 +16,14 @@ const NavItemComponent: React.FC<IProjectCard> = ({
   year,
 }) => {
   return (
-    <div className="project-card d-flex flex-row">
+    <div className="project-card d-flex flex-column flex-md-row">
       <a href={url} target="_blank">
         <img src={icon} alt="" />
       </a>
       <div className="text-content d-flex flex-column">
         <div className="header d-flex flex-row">
           <a href={url} target="_blank">
-            <h3 className="title">
+            <h3 className="title mt-2 mt-md-0">
               {name} <span className="year text">{`(${year})`}</span>
             </h3>
           </a>
