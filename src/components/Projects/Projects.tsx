@@ -2,36 +2,32 @@ import GithubIoIcon from "../../images/github-io-icon.png";
 import MarquinhosIcon from "../../images/marquinhos-icon.png";
 import MasterBallIcon from "../../images/master-ball-icon.png";
 import TicTacToeIcon from "../../images/tic-tac-toe-icon.png";
-import ProjectCard from "./ProjectCard";
+import ProjectCard, { type IProjectCard } from "./ProjectCard";
 
-interface Project {
-  description: string;
-  icon: string;
-  name: string;
-  url: string;
-  year: string;
-}
+
 const Projects = () => {
-  const projects: Array<Project> = [
+  const projects: Array<IProjectCard> = [
     {
       description:
         'A Discord bot in JavaScript that manages messages, links, and permissions, contextualizes server entries/exits, gives recommendations, and interacts with daily events, adding "love" to the server.',
+      githubRepo: "https://github.com/Devaneios/MarquinhosBOT",
       icon: MarquinhosIcon,
       name: "Marquinhos Bot",
-      url: "https://github.com/Devaneios/MarquinhosBOT",
       year: "2020",
     },
     {
       description:
         "The Github repository for this website.  It is built with React and TypeScript, showcasing my portfolio and projects.",
+        githubRepo: "https://github.com/tiago-ds/tiago-ds.github.io",
       icon: GithubIoIcon,
       name: "tiago-ds.github.io",
-      url: "https://tiago-ds.github.io",
+      url: "https://tiago-ds.github.io/",
       year: "2025",
     },
     {
       description:
         "A React training project allowing users to search, view details (description, types), and favorite Pokémon using The Poké API. It also lets them visualize their favorited Pokémon.",
+      githubRepo: "https://pokemon-favoriter.vercel.app/",
       icon: MasterBallIcon,
       name: "Pokemon Favoriter",
       url: "https://github.com/tiago-ds/pokemon-favoriter",
@@ -40,9 +36,10 @@ const Projects = () => {
     {
       description:
         "A unique take on the classic game where players are limited to 3 pieces on the board simultaneously. When a player places a fourth piece, their oldest piece is automatically removed, adding a strategic layer to the gameplay.",
+      githubRepo: "https://github.com/tiago-ds/tic-tac-toe",
       icon: TicTacToeIcon,
       name: "My custom tic-tac-toe",
-      url: "https://github.com/tiago-ds/tic-tac-toe",
+      url: "tiago-ds.github.io/tic-tac-toe/",
       year: "2024",
     },
   ];
@@ -55,6 +52,7 @@ const Projects = () => {
           <ProjectCard
             key={project.name}
             description={project.description}
+            githubRepo={project.githubRepo}
             icon={project.icon}
             name={project.name}
             url={project.url}

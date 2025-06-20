@@ -1,15 +1,17 @@
 import "./projects.css";
 
-interface IProjectCard {
+export interface IProjectCard {
   description: string;
+  githubRepo: string
   icon: string;
   name: string;
-  url: string;
+  url?: string;
   year: string;
 }
 
 const NavItemComponent: React.FC<IProjectCard> = ({
   description,
+  githubRepo,
   icon,
   name,
   url,
@@ -22,7 +24,7 @@ const NavItemComponent: React.FC<IProjectCard> = ({
       </a>
       <div className="text-content d-flex flex-column">
         <div className="header d-flex flex-row">
-          <a href={url} target="_blank">
+          <a href={githubRepo} target="_blank">
             <h3 className="title mt-2 mt-md-0">
               {name} <span className="year text">{`(${year})`}</span>
             </h3>
