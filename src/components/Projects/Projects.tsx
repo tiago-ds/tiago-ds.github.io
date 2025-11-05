@@ -4,8 +4,55 @@ import MasterBallIcon from "../../images/master-ball-icon.png";
 import MiniWazeIcon from "../../images/mini-waze-icon.svg";
 import PokequizIcon from "../../images/poke-quiz-icon.png";
 import TicTacToeIcon from "../../images/tic-tac-toe-icon.png";
-import ProjectCard from "./ProjectCard";
+import BaseCard from "../shared/BaseCard";
 
+import "./projects.css";
+
+interface IProjectCard {
+	description: string;
+	github: string;
+	icon: string;
+	name: string;
+	url: string;
+	year: string;
+}
+
+const ProjectCard: React.FC<IProjectCard> = ({
+	description,
+	github,
+	icon,
+	name,
+	url,
+	year,
+}) => {
+	return (
+		<div className="project-card d-flex flex-column flex-md-row">
+			<a href={url} target="_blank">
+				<img src={icon} alt={`${name} icon`} />
+			</a>
+			<div className="text-content d-flex flex-column">
+				<div className="header d-flex flex-row">
+					<a href={url} target="_blank">
+						<h3 className="title mt-2 mt-md-0">
+							{name}{" "}
+							<span className="year text">{`(${year})`}</span>{" "}
+							<small>
+								<a
+									href={github}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i className="bi bi-github" />
+								</a>
+							</small>
+						</h3>
+					</a>
+				</div>
+				<p className="description">{description}</p>
+			</div>
+		</div>
+	);
+};
 interface Project {
 	description: string;
 	icon: string;
@@ -14,6 +61,7 @@ interface Project {
 	url: string;
 	year: string;
 }
+
 const Projects = () => {
 	const projects: Array<Project> = [
 		{
@@ -73,8 +121,7 @@ const Projects = () => {
 	];
 
 	return (
-		<div className="d-flex flex-column align-items-center main-section m-5">
-			<h2 className="align-self-md-start title-text">Projects</h2>
+		<BaseCard title="Projects" mainCard className="m-5">
 			<div className="projects-container flex-column flex-md-row mt-3 mt-md-5">
 				{projects.map((project) => (
 					<ProjectCard
@@ -88,7 +135,7 @@ const Projects = () => {
 					/>
 				))}
 			</div>
-		</div>
+		</BaseCard>
 	);
 };
 

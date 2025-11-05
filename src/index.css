@@ -9,5 +9,34 @@ html {
 	color-scheme: light dark;
 
 	--content-max-width: 1280px;
-	--color-text: #3d1860;
+
+	--color-text-title: #3d1860;
+	--color-text-regular: #643579;
+	--color-card-bg: #9ef4e642;
+	--color-background: #bb99cd;
+}
+
+.base-card {
+	background-color: var(--color-card-bg);
+	color: var(--color-text-title);
+
+	width: fit-content;
+	max-width: min(100%, var(--content-max-width));
+	max-height: fit-content;
+
+	justify-self: center;
+
+	.title {
+		font-family: "Reem Kufi Fun", sans-serif;
+	}
+
+	.regular-text {
+		font-family: "Tajawal", sans-serif;
+		font-size: 0.75rem;
+		font-weight: 400;
+		font-style: normal;
+		text-align: justify;
+
+		color: var(--color-text-regular);
+	}
 }

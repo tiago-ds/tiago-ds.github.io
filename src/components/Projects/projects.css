@@ -1,8 +1,4 @@
 .projects-container {
-	h2 {
-		text-transform: uppercase;
-	}
-
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
@@ -27,13 +23,13 @@
 			}
 
 			.header {
+				font-family: "Reem Kufi Fun", sans-serif;
+
 				.year {
-					font-family: "Reem Kufi Fun", sans-serif;
 					font-size: 0.75rem;
 				}
 
 				.title {
-					font-family: "Reem Kufi Fun", sans-serif;
 					font-size: 1rem;
 					font-weight: 700;
 					font-style: normal;
@@ -44,10 +40,6 @@
 			.description {
 				font-size: 0.75rem;
 				margin-top: 0;
-
-				small {
-					color: red;
-				}
 			}
 		}
 	}
