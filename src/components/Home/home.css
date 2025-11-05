@@ -1,16 +1,22 @@
+.details {
+	font-family: "Tajawal", sans-serif;
+	justify-self: center;
+	max-width: 1280px;
+}
+
 .profile-image {
-  width: 150px;
-  border-radius: 50%;
+	width: 150px;
+	border-radius: 50%;
 }
 
 @media (min-width: 768px) {
-  .profile-image {
-    width: 270px;
-  }
+	.profile-image {
+		width: 270px;
+	}
 }
 
 @media (min-width: 1199px) {
-  .profile-image {
-    width: 350px;
-  }
+	.profile-image {
+		width: 350px;
+	}
 }
