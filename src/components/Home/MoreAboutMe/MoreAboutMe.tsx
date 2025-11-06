@@ -1,3 +1,4 @@
+import { MyInstruments } from "./MyInstruments/MyInstruments";
 import MyMovies from "./MyMovies/MyMovies";
 import NowPlaying from "./NowPlaying/NowPlaying";
 import "./moreAboutMe.css";
@@ -9,7 +10,9 @@ export function MoreAboutMe() {
 				<NowPlaying />
 			</div>
 
-			<div className="grid-item item-B"></div>
+			<div className="grid-item my-instruments-container">
+				<MyInstruments />
+			</div>
 
 			<div className="grid-item movies-container">
 				<MyMovies />

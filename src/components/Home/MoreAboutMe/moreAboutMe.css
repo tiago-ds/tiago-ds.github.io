@@ -15,8 +15,8 @@
 	> * {
 		border-radius: 2rem;
 
-		color: #3d1860;
-		background-color: #9ef4e642;
+		color: var(--color-text-title);
+		background-color: var(--color-card-bg);
 		height: 100%;
 	}
 }
@@ -36,10 +36,9 @@
 		grid-row: 1 / span 6;
 	}
 
-	.item-B {
+	.my-instruments-container {
 		grid-column: 17 / span 10;
-		grid-row: 1 / span 2;
-		background-color: #9ef4e642;
+		grid-row: 1 / span 3;
 	}
 
 	.movies-container {
@@ -48,14 +47,12 @@
 	}
 
 	.item-D {
-		grid-column: 17 / span 4;
+		grid-column: 16 / span 4;
 		grid-row: 4 / span 3;
-		background-color: #9ef4e642;
 	}
 
 	.item-E {
-		grid-column: 17 / span 4;
+		grid-column: 16 / span 4;
 		grid-row: 3 / span 1;
-		background-color: #9ef4e642;
 	}
 }

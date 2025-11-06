@@ -1,7 +1,7 @@
 import { type ReactNode } from "react";
 
 interface IBaseCardProps {
-	title: string | ReactNode;
+	title: string;
 	className?: string;
 	displayOverride?: string;
 	mainCard?: boolean;

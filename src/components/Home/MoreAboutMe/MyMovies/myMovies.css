@@ -1,27 +1,27 @@
-.my-movies-component {
-	.movies-container {
-		height: 90%;
+.movies-container {
+	height: 100%;
+	font-size: 0.75rem;
+
+	.movie {
 		font-size: 0.75rem;
+		text-align: center;
+		height: calc(50% - 1.5rem);
+		width: auto;
+		justify-content: space-between;
 
-		.movie {
+		a {
+			color: var(--color-text);
+		}
+
+		img {
+			object-fit: contain;
+			height: 85%;
+		}
+
+		.movie-description {
 			font-size: 0.75rem;
-			text-align: center;
-			height: calc(50% - 1.5rem);
-			width: auto;
-			justify-content: space-between;
-
-			a {
-				color: var(--color-text);
-			}
-
-			img {
-				object-fit: contain;
-			}
-
-			.movie-description {
-				font-size: 0.75rem;
-				text-align: justify;
-			}
+			text-align: justify;
+			color: var(--color-text-regular);
 		}
 	}
 }

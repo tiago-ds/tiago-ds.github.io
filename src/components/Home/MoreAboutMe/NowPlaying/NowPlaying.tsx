@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import useFetch from "../../../hooks/useFetch";
 import "./nowPlaying.css";
+import BaseCard from "../../../shared/BaseCard";
 
 type NowPlayingData = {
 	albumCoverURL: string;
@@ -44,30 +45,26 @@ export default function NowPlaying() {
 	}, []);
 
 	return (
-		<div className="now-playing-component p-4">
-			<div className="title-text">
-				<h5>I'm currently listening to..</h5>
-			</div>
-			<div className="player d-flex flex-column">
-				<img
-					alt={`${trackData?.albumName} cover art, by ${trackData?.artistName}`}
-					className="rounded-circle"
-					src={trackData?.albumCoverURL}
-				/>
-				<a
-					href={trackData?.trackURL}
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<div className="d-flex flex-column justify-content-center align-items-center mt-5">
-						<h2 className="">{trackData?.trackName}</h2>
-						<h3>{trackData?.artistName}</h3>
-						<h1>
-							<i className="bi bi-play-circle	"></i>
-						</h1>
-					</div>
-				</a>
-			</div>
-		</div>
+		<BaseCard title={"I'm currently listening to.."}>
+			<img
+				alt={`${trackData?.albumName} cover art, by ${trackData?.artistName}`}
+				className="rounded-circle w-100 mt-3"
+				src={trackData?.albumCoverURL}
+			/>
+			<a
+				href={trackData?.trackURL}
+				target="_blank"
+				rel="noopener noreferrer"
+				className="text-decoration-none music-link"
+			>
+				<div className="d-flex flex-column justify-content-center align-items-center mt-5">
+					<h2 className="">{trackData?.trackName}</h2>
+					<h3>{trackData?.artistName}</h3>
+					<h1>
+						<i className="bi bi-play-circle	"></i>
+					</h1>
+				</div>
+			</a>
+		</BaseCard>
 	);
 }

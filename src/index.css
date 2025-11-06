@@ -20,7 +20,7 @@ html {
 	background-color: var(--color-card-bg);
 	color: var(--color-text-title);
 
-	width: fit-content;
+	width: 100%;
 	max-width: min(100%, var(--content-max-width));
 	max-height: fit-content;
 
