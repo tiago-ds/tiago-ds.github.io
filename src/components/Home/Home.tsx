@@ -1,4 +1,4 @@
-import myPicture from "../../images/me.jpg";
+import myPicture from "../../assets/me.jpg";
 import "./home.css";
 
 export default function Home() {

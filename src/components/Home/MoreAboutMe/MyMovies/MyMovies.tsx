@@ -11,7 +11,7 @@ const MovieContent: React.FC<IMovieContentProps> = ({ movie }) => {
 	return (
 		<div className="movie d-flex flex-row gap-3">
 			<img
-				className="rounded-5"
+				className="rounded-4"
 				src={movie.cover}
 				id={movie.name}
 				alt={movie.alt}

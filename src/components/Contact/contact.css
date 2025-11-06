@@ -1,10 +1,10 @@
 .contacts-container {
-  padding-left: 0;
+	padding-left: 0;
 
-  list-style: none;
+	list-style: none;
 
-  .contact-icon {
-    width: 85px;
-    height: 85px;
-  }
+	.contact-icon {
+		width: 85px;
+		height: 85px;
+	}
 }

@@ -16,6 +16,10 @@ html {
 	--color-background: #bb99cd;
 }
 
+.w-fit-content {
+	width: fit-content !important;
+}
+
 .base-card {
 	background-color: var(--color-card-bg);
 	color: var(--color-text-title);

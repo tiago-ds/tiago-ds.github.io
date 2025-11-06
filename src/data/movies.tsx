@@ -1,5 +1,5 @@
-import AboutTime from "../images/about-time.jpg";
-import LaLaLand from "../images/la-la-land.jpg";
+import AboutTime from "../assets/movie-covers/about-time.jpg";
+import LaLaLand from "../assets/movie-covers/la-la-land.jpg";
 
 export type Movie = {
 	alt: string;

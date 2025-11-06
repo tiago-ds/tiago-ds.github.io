@@ -1,61 +1,32 @@
 import "./contact.css";
 
-import GithubIcon from "../../images/github-icon.png";
-import LinkedinIcon from "../../images/linkedin-icon.png";
-import MailIcon from "../../images/mail-icon.png";
 import BaseCard from "../shared/BaseCard";
+import { type ContactType, contacts } from "../../data/contacts";
 
 interface IContactIcon {
-	icon: string;
-	name: string;
-	url: string;
+	contact: ContactType;
 }
 
-const ContactIcon: React.FC<IContactIcon> = ({ icon, name, url }) => {
+const ContactIcon: React.FC<IContactIcon> = ({ contact }) => {
 	return (
 		<li>
-			<a aria-current="page" href={url} target="_blank">
-				<img className="contact-icon" src={icon} alt={`${name}-icon`} />
+			<a aria-current="page" href={contact.url} target="_blank">
+				<img
+					className="contact-icon"
+					src={contact.icon}
+					alt={`${contact.name}-icon`}
+				/>
 			</a>
 		</li>
 	);
 };
 
-interface Contact {
-	icon: string;
-	name: string;
-	url: string;
-}
-
 export default function Contact() {
-	const contacts: Array<Contact> = [
-		{
-			icon: GithubIcon,
-			name: "Github",
-			url: "https://github.com/tiago-ds",
-		},
-		{
-			icon: LinkedinIcon,
-			name: "LinkedIn",
-			url: "https://www.linkedin.com/in/tiago-campelo/",
-		},
-		{
-			icon: MailIcon,
-			name: "Email",
-			url: "mailto:tiiagoscs@gmail.com",
-		},
-	];
-
 	return (
-		<BaseCard className="mt-5" title="Contact" mainCard>
+		<BaseCard className="mt-5 w-fit-content" title="Contact" mainCard>
 			<ul className="contacts-container mt-5 d-flex flex-column flex-md-row gap-5 align-self-center pl-0">
 				{contacts.map((contact) => (
-					<ContactIcon
-						icon={contact.icon}
-						key={contact.name}
-						name={contact.name}
-						url={contact.url}
-					/>
+					<ContactIcon contact={contact} />
 				))}
 			</ul>
 		</BaseCard>
