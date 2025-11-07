@@ -2,8 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 // import useFetch from "../../../hooks/useFetch";
 import "./nowPlaying.css";
-import BaseCard from "../../../shared/BaseCard";
-import { createSpotifyTrackURL } from "../../../../utils/utils";
+import BaseCard from "../../shared/BaseCard";
+import { createSpotifyTrackURL } from "../../../utils/utils";
 
 type NowPlayingData = {
 	albumCoverURL: string;

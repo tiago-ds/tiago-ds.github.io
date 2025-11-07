@@ -1,5 +1,5 @@
-import BaseCard from "../../../shared/BaseCard";
-import { type Movie, movies } from "../../../../data/movies";
+import BaseCard from "../../shared/BaseCard";
+import { type Movie, movies } from "../../../data/movies";
 
 import "./myMovies.css";
 

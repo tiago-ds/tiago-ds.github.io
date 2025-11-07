@@ -1,4 +1,4 @@
-import BaseCard from "../../../shared/BaseCard";
+import BaseCard from "../../shared/BaseCard";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import {
 	type InstrumentDisplayData,
 	instrumentsData,
-} from "../../../../data/instruments";
+} from "../../../data/instruments";
 
 import "./myInstruments.css";
 

@@ -1,5 +1,6 @@
 import { MyInstruments } from "./MyInstruments/MyInstruments";
 import MyMovies from "./MyMovies/MyMovies";
+import { MyPets } from "./MyPets/MyPets";
 import NowPlaying from "./NowPlaying/NowPlaying";
 import "./moreAboutMe.css";
 
@@ -18,9 +19,9 @@ export function MoreAboutMe() {
 				<MyMovies />
 			</div>
 
-			<div className="grid-item item-D"></div>
-
-			<div className="grid-item item-E"></div>
+			<div className="grid-item pets-container">
+				<MyPets />
+			</div>
 		</div>
 	);
 }
