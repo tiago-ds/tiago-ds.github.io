@@ -20,16 +20,4 @@ export const instrumentsData: InstrumentDisplayData[] = [
 		image: ukuleleIcon,
 		name: "Ukulele",
 	},
-	{
-		image: ukuleleIcon,
-		name: "Ukulele",
-	},
-	{
-		image: ukuleleIcon,
-		name: "Ukulele",
-	},
-	{
-		image: ukuleleIcon,
-		name: "Ukulele",
-	},
 ];
