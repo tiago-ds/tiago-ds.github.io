@@ -1,3 +1,11 @@
 .music-link {
 	color: var(--color-text-title);
 }
+
+/* Matches the 2.5rem the icon inherited from its former <h1> wrapper. */
+.play-icon {
+	display: block;
+	font-size: 2.5rem;
+	line-height: 1;
+	margin-top: 0.5rem;
+}

@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 90px;
 
-  font-family: "Reem Kufi Fun", sans-serif;
+  font-family: var(--font-title);
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 700;
@@ -15,7 +15,7 @@
   padding-left: 0;
 
   a {
-    color: #3d1860;
+    color: var(--color-text-title);
     padding: 0.825rem 1.5rem;
     border-radius: 14px;
 

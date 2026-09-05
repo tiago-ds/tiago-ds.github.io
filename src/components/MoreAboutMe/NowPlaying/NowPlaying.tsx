@@ -1,6 +1,4 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-// import useFetch from "../../../hooks/useFetch";
 import "./nowPlaying.css";
 import BaseCard from "../../shared/BaseCard";
 import { createSpotifyTrackURL } from "../../../utils/utils";
@@ -11,39 +9,53 @@ type NowPlayingData = {
 	artistName: string;
 	id: string;
 	trackName: string;
-	trackURL: string;
 };
 
-const NowPlayingAPIURL = "http://localhost:3000/track-details/tiagodscs";
+type NowPlayingState =
+	| { status: "loading" }
+	| { status: "ready"; track: NowPlayingData }
+	| { status: "error" };
+
+// In dev this goes through the Vite proxy (see vite.config.ts) because the
+// track service only allows the production origin; in a build it is called
+// directly.
+const NowPlayingAPIURL = import.meta.env.DEV
+	? "/api/track-details/tiagodscs"
+	: "https://spotify-current-scrobbling.onrender.com/track-details/tiagodscs";
 
 export default function NowPlaying() {
-	const fetchNowPlaying = async () => {
-		// const response = await axios.get(NowPlayingAPIURL);
-		const response = {
-			data: {
-				albumCoverURL:
-					"https://i.scdn.co/image/ab67616d0000b2731bd6d088d3d81972af4cb81d",
-				albumName: "Apricot Princess",
-				artistName: "Rex Orange County",
-				id: "4fg2EzaeNhR2PWNGXbX18n",
-				trackName: "4 Seasons",
-				trackURL: "spotify:track:4fg2EzaeNhR2PWNGXbX18n",
-			},
-		};
-		return response.data;
-	};
-
-	const [trackData, setTrackData] = useState<NowPlayingData | null>(null);
-
-	// const { data, loading } = useFetch<NowPlayingData | null>(NowPlayingAPIURL);
+	const [state, setState] = useState<NowPlayingState>({ status: "loading" });
 
 	useEffect(() => {
+		let cancelled = false;
+
 		const getNowPlaying = async () => {
-			const data = await fetchNowPlaying();
-			setTrackData(data);
+			try {
+				const response = await fetch(NowPlayingAPIURL);
+
+				if (!response.ok) {
+					throw new Error(`Request failed: ${response.status}`);
+				}
+
+				const track: NowPlayingData = await response.json();
+
+				if (!cancelled) {
+					setState({ status: "ready", track });
+				}
+			} catch (error) {
+				console.error("Unable to fetch the current track: ", error);
+
+				if (!cancelled) {
+					setState({ status: "error" });
+				}
+			}
 		};
 
 		getNowPlaying();
+
+		return () => {
+			cancelled = true;
+		};
 	}, []);
 
 	return (
@@ -51,31 +63,37 @@ export default function NowPlaying() {
 			className="d-flex flex-column"
 			title={"I'm currently listening to.."}
 		>
-			{trackData ? (
+			{state.status === "loading" && (
+				<div className="align-self-center" role="status">
+					{"Waking up my track service.."}
+				</div>
+			)}
+
+			{state.status === "error" && (
+				<div className="align-self-center" role="status">
+					{"Unable to connect to my track service! :("}
+				</div>
+			)}
+
+			{state.status === "ready" && (
 				<div className="flex-column">
 					<img
-						alt={`${trackData?.albumName} cover art, by ${trackData?.artistName}`}
+						alt={`${state.track.albumName} cover art, by ${state.track.artistName}`}
 						className="rounded-circle w-100 mt-3"
-						src={trackData?.albumCoverURL}
+						src={state.track.albumCoverURL}
 					/>
 					<a
-						href={createSpotifyTrackURL(trackData?.id)}
+						href={createSpotifyTrackURL(state.track.id)}
 						target="_blank"
 						rel="noopener noreferrer"
 						className="text-decoration-none music-link"
 					>
 						<div className="d-flex flex-column justify-content-center align-items-center mt-5">
-							<h2 className="">{trackData?.trackName}</h2>
-							<h3>{trackData?.artistName}</h3>
-							<h1>
-								<i className="bi bi-play-circle"></i>
-							</h1>
+							<h3 className="fs-2">{state.track.trackName}</h3>
+							<h4 className="fs-3">{state.track.artistName}</h4>
+							<i className="bi bi-play-circle play-icon" />
 						</div>
 					</a>
-				</div>
-			) : (
-				<div className="align-self-center">
-					{"Unable to connect to my track service! :("}
 				</div>
 			)}
 		</BaseCard>

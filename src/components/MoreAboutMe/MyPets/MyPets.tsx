@@ -29,7 +29,7 @@ function PetsCarousel() {
 		dots: true,
 		infinite: true,
 		speed: 500,
-		itemsToShow: 1,
+		slidesToShow: 1,
 		autoplay: true,
 		swipe: true,
 		autoplaySpeed: 5000,
@@ -37,8 +37,8 @@ function PetsCarousel() {
 
 	return (
 		<Slider {...settings}>
-			{petsData.map((pet, index) => (
-				<PetDisplay key={index} pet={pet} />
+			{petsData.map((pet) => (
+				<PetDisplay key={pet.name} pet={pet} />
 			))}
 		</Slider>
 	);

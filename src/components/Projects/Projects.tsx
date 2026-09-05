@@ -10,25 +10,33 @@ interface IProjectCard {
 const ProjectCard: React.FC<IProjectCard> = ({ project }) => {
 	return (
 		<div className="project-card d-flex flex-column flex-md-row">
-			<a href={project.url} target="_blank">
+			<a href={project.url} target="_blank" rel="noopener noreferrer">
 				<img src={project.icon} alt={`${project.name} icon`} />
 			</a>
 			<div className="text-content d-flex flex-column">
-				<div className="header d-flex flex-row">
-					<a href={project.url} target="_blank">
-						<h3 className="title mt-2 mt-md-0">
+				{/*
+				 * The GitHub link is a sibling of the title link, never a
+				 * child: nesting one <a> inside another is invalid HTML and
+				 * the parser silently un-nests it.
+				 */}
+				<div className="header d-flex flex-row align-items-baseline gap-2">
+					<h3 className="title mt-2 mt-md-0">
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+						>
 							{project.name}{" "}
-							<span className="year text">{`(${project.year})`}</span>{" "}
-							<small>
-								<a
-									href={project.github}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<i className="bi bi-github" />
-								</a>
-							</small>
-						</h3>
+							<span className="year text">{`(${project.year})`}</span>
+						</a>
+					</h3>
+					<a
+						href={project.github}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label={`${project.name} on GitHub`}
+					>
+						<i className="bi bi-github" />
 					</a>
 				</div>
 				<p className="description">{project.description}</p>

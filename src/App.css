@@ -14,18 +14,8 @@
 	max-width: var(--content-max-width);
 	justify-self: center;
 
-	& .regular-text {
-		font-family: "Tajawal", sans-serif;
-		font-size: 0.75rem;
-		font-weight: 400;
-		font-style: normal;
-		text-align: justify;
-
-		color: var(--color-text-regular);
-	}
-
 	& .title-text {
-		font-family: "Reem Kufi Fun", sans-serif;
+		font-family: var(--font-title);
 		font-size: 1rem;
 		font-weight: 700;
 		font-style: normal;

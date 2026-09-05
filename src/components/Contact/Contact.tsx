@@ -10,11 +10,11 @@ interface IContactIcon {
 const ContactIcon: React.FC<IContactIcon> = ({ contact }) => {
 	return (
 		<li>
-			<a aria-current="page" href={contact.url} target="_blank">
+			<a href={contact.url} target="_blank" rel="noopener noreferrer">
 				<img
 					className="contact-icon"
 					src={contact.icon}
-					alt={`${contact.name}-icon`}
+					alt={contact.name}
 				/>
 			</a>
 		</li>
@@ -26,7 +26,7 @@ export default function Contact() {
 		<BaseCard className="mt-5 w-fit-content" title="Contact" mainCard>
 			<ul className="contacts-container mt-5 d-flex flex-column flex-md-row gap-5 align-self-center pl-0">
 				{contacts.map((contact) => (
-					<ContactIcon contact={contact} />
+					<ContactIcon key={contact.name} contact={contact} />
 				))}
 			</ul>
 		</BaseCard>

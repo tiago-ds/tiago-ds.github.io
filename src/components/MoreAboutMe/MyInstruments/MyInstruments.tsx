@@ -55,12 +55,13 @@ function InstrumentsCarousel() {
 	return (
 		<div className="mt-4">
 			<Slider {...settings}>
-				{instrumentsData.map((instrument, index) => (
-					<InstrumentDisplay key={index} instrument={instrument} />
+				{instrumentsData.map((instrument) => (
+					<InstrumentDisplay
+						key={instrument.name}
+						instrument={instrument}
+					/>
 				))}
 			</Slider>
 		</div>
 	);
 }
-
-export default InstrumentsCarousel;

@@ -10,7 +10,7 @@
 		justify-content: space-between;
 
 		a {
-			color: var(--color-text);
+			color: var(--color-text-title);
 		}
 
 		img {

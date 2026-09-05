@@ -14,16 +14,16 @@
 
 		.text-content {
 			margin-left: 20px;
-			color: #3d1860;
+			color: var(--color-text-title);
 
 			a {
-				color: #3d1860;
+				color: var(--color-text-title);
 				text-decoration: none;
 				font-weight: 700;
 			}
 
 			.header {
-				font-family: "Reem Kufi Fun", sans-serif;
+				font-family: var(--font-title);
 
 				.year {
 					font-size: 0.75rem;
