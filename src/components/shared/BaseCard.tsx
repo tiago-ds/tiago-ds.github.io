@@ -15,11 +15,7 @@ const BaseCard: React.FC<IBaseCardProps> = ({
 }) => {
 	return (
 		<section className={`base-card p-5 rounded-5 ${className || ""}`}>
-			{/*
-			 * A main card titles its whole page, so it renders the page's only
-			 * <h1>; secondary cards sit under one and render <h2>. The fs-*
-			 * classes keep the previous h2/h5 sizing.
-			 */}
+			{/* fs-* keeps the previous h2/h5 sizing. */}
 			{mainCard ? (
 				<h1 className="text-start text-uppercase fw-semibold title fs-2">
 					{title}

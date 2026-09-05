@@ -8,8 +8,8 @@ This portfolio was built using the following tools:
 - **Bootstrap** and plain **CSS** for styling.
 - **Git** for version control.
 
-The "currently listening to" card is served by a separate
-[Spotify scrobbling service](https://github.com/tiago-ds/spotify-current-scrobbling).
+The "currently listening to" card is served by a separate Spotify scrobbling
+service, hosted apart from this repository.
 
 #### It's currently live at [https://tiago-ds.github.io](https://tiago-ds.github.io) !
 

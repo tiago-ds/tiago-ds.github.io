@@ -21,7 +21,6 @@ html {
 	width: fit-content !important;
 }
 
-/* Shared by the home hero and every card body. */
 .regular-text {
 	font-family: var(--font-body);
 	font-size: 0.75rem;

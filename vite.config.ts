@@ -8,10 +8,7 @@ export default defineConfig({
   base: "/",
   plugins: [react()],
   server: {
-    // The track service only sends access-control-allow-origin for the
-    // production site, so a direct browser call from localhost is blocked by
-    // CORS. Proxying it through the dev server sidesteps that: the request is
-    // made server-side, where CORS does not apply.
+    // The service only allows the production origin, so call it server-side.
     proxy: {
       "/api/track-details": {
         target: TRACK_SERVICE,

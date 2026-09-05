@@ -29,8 +29,6 @@ export default tseslint.config(
         "warn",
         { allowConstantExport: true },
       ],
-      // The new JSX transform makes the React import unnecessary, and
-      // TypeScript already covers prop types.
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
     },

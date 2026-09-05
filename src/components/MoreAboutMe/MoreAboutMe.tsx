@@ -7,7 +7,6 @@ import "./moreAboutMe.css";
 export function MoreAboutMe() {
 	return (
 		<div className="css-grid-collage-container m-5">
-			{/* The collage has no visible page title, but it still needs one <h1>. */}
 			<h1 className="visually-hidden">More about me</h1>
 
 			<div className="grid-item now-playing-container">

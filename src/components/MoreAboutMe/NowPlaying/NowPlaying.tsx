@@ -16,9 +16,7 @@ type NowPlayingState =
 	| { status: "ready"; track: NowPlayingData }
 	| { status: "error" };
 
-// In dev this goes through the Vite proxy (see vite.config.ts) because the
-// track service only allows the production origin; in a build it is called
-// directly.
+// Dev goes through the Vite proxy: the service only allows the prod origin.
 const NowPlayingAPIURL = import.meta.env.DEV
 	? "/api/track-details/tiagodscs"
 	: "https://spotify-current-scrobbling.onrender.com/track-details/tiagodscs";

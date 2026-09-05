@@ -14,11 +14,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ project }) => {
 				<img src={project.icon} alt={`${project.name} icon`} />
 			</a>
 			<div className="text-content d-flex flex-column">
-				{/*
-				 * The GitHub link is a sibling of the title link, never a
-				 * child: nesting one <a> inside another is invalid HTML and
-				 * the parser silently un-nests it.
-				 */}
+				{/* Sibling, not nested: an <a> inside an <a> is invalid HTML. */}
 				<div className="header d-flex flex-row align-items-baseline gap-2">
 					<h3 className="title mt-2 mt-md-0">
 						<a

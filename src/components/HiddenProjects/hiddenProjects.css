@@ -1,0 +1,93 @@
+.hidden-projects-container {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: left;
+	max-width: var(--content-max-width);
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.hidden-projects-container .hidden-project {
+	color: var(--color-text-title);
+}
+
+.hidden-projects-container .project-icon {
+	font-size: 2rem;
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.hidden-projects-container .title {
+	font-family: var(--font-title);
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 0.25rem;
+
+	a {
+		color: var(--color-text-title);
+		text-decoration: none;
+	}
+
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.hidden-projects-container .year {
+	font-size: 0.75rem;
+	font-weight: 400;
+}
+
+.hidden-projects-container .github-link {
+	margin-left: 0.5rem;
+	color: var(--color-text-title);
+}
+
+.hidden-projects-container .badge-soon {
+	margin-left: 0.5rem;
+	padding: 2px 8px;
+	border-radius: 999px;
+
+	background: var(--color-text-title);
+	color: #fff;
+
+	font-family: var(--font-body);
+	font-size: 0.6rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	vertical-align: middle;
+}
+
+.hidden-projects-container .description {
+	font-family: var(--font-body);
+	font-size: 0.75rem;
+	margin: 0;
+
+	color: var(--color-text-regular);
+}
+
+@media (min-width: 768px) {
+	.hidden-projects-container {
+		gap: 28px;
+	}
+
+	.hidden-projects-container .project-icon {
+		font-size: 2.5rem;
+	}
+
+	.hidden-projects-container .title {
+		font-size: 1.5rem;
+	}
+
+	.hidden-projects-container .year {
+		font-size: 1rem;
+	}
+
+	.hidden-projects-container .description {
+		font-size: 1rem;
+	}
+}

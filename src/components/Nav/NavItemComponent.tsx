@@ -8,10 +8,7 @@ interface INavItem {
 const NavItemComponent: React.FC<INavItem> = ({ name, path }) => {
 	return (
 		<li>
-			{/*
-			 * NavLink sets aria-current="page" on the active route only.
-			 * `end` stops "/" from matching every nested path.
-			 */}
+			{/* `end` stops "/" matching every nested path. */}
 			<NavLink to={path} end={path === "/"}>
 				{name}
 			</NavLink>
