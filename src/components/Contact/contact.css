@@ -8,3 +8,10 @@
 		height: 85px;
 	}
 }
+
+/* The anchor was inline, so its box collapsed to the 19px line height while
+   the icon inside it was 85px. Making it a block box means the link's real
+   hit area matches what you see. */
+.contacts-container a {
+	display: inline-flex;
+}

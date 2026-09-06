@@ -12,6 +12,11 @@
 	grid-column: auto / span 1;
 	grid-row: auto / span 1;
 
+	/* Grid items default to min-width: auto, so they refuse to shrink below
+	   their content. The carousel track is far wider than the phone, which
+	   dragged the whole column open to ~6000px. */
+	min-width: 0;
+
 	> * {
 		border-radius: 2rem;
 
@@ -50,4 +55,29 @@
 		grid-column: 17 / span 10;
 		grid-row: 4 / span 3;
 	}
+}
+
+/* The slick dots and arrows ship at 20x20, well under the ~44px that is
+   comfortable on a phone. Grow the hit area without growing the visible dot. */
+.grid-item .slick-dots li {
+	width: 32px;
+	height: 32px;
+	margin: 0;
+}
+
+.grid-item .slick-dots li button {
+	width: 32px;
+	height: 32px;
+}
+
+.grid-item .slick-dots li button:before {
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+}
+
+.grid-item .slick-prev,
+.grid-item .slick-next {
+	width: 44px;
+	height: 44px;
 }

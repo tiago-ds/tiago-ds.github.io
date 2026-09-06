@@ -29,3 +29,18 @@
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.19);
   }
 }
+
+/* Four items at 1.5rem of horizontal padding do not fit a 390px phone; they
+   pushed every page ~46px wider than the viewport. Tighten the spacing rather
+   than wrap, so the bar stays one row. Vertical padding is untouched, which
+   keeps each link comfortably above the 44px tap-target guideline. */
+@media (max-width: 575px) {
+  .nav-bar {
+    font-size: 13px;
+    gap: 0 !important;
+  }
+
+  .nav-bar a {
+    padding: 0.825rem 0.6rem;
+  }
+}

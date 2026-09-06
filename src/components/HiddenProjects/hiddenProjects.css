@@ -91,3 +91,12 @@
 		font-size: 1rem;
 	}
 }
+
+.hidden-projects-container .github-link {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	vertical-align: middle;
+}

@@ -74,3 +74,13 @@
 		}
 	}
 }
+
+/* The github glyph is a 16px icon; pad it out to a finger-sized target. */
+.projects-container .header a:has(.bi-github) {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 44px;
+	min-height: 44px;
+	margin: -10px 0;
+}

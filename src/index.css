@@ -45,3 +45,24 @@ html {
 		font-family: var(--font-title);
 	}
 }
+
+/* Bootstrap's spacing utilities are a flat 3rem at every screen size, so on a
+   390px phone the m-5 + p-5 pair ate 207px (53%) of the viewport and left 183px
+   of usable width. These need !important and a compound selector because the
+   Bootstrap utilities are themselves !important. */
+@media (max-width: 767px) {
+	.main-section.m-5,
+	.base-card.m-5,
+	.css-grid-collage-container.m-5 {
+		margin: 1rem !important;
+	}
+
+	.base-card.mt-5 {
+		margin: 1rem !important;
+	}
+
+	.main-section.p-5,
+	.base-card.p-5 {
+		padding: 1.25rem !important;
+	}
+}

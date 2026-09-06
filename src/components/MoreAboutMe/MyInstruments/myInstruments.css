@@ -3,3 +3,10 @@
 	color: var(--color-text-title);
 	opacity: 0.9;
 }
+
+/* The icon rendered at its intrinsic 163px inside a 92px slide, so it spilled
+   over the neighbouring slide. */
+.instrument-icon {
+	max-width: 100%;
+	height: auto;
+}
