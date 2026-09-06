@@ -27,13 +27,13 @@ const InstrumentDisplay: React.FC<IInstrumentDisplayProps> = ({
 	instrument,
 }) => {
 	return (
-		<div className="d-flex flex-column justify-content-center align-items-center">
+		<div className="flex flex-col items-center justify-center">
 			<img
 				src={instrument.image}
 				alt={instrument.name}
-				className=" instrument-icon"
+				className="instrument-icon h-auto max-w-full"
 			/>
-			<p className="mt-3 title text-uppercase fw-bold">
+			<p className="font-title mt-4 font-bold uppercase">
 				{instrument.name}
 			</p>
 		</div>
@@ -53,7 +53,7 @@ function InstrumentsCarousel() {
 	};
 
 	return (
-		<div className="mt-4">
+		<div className="mt-6">
 			<Slider {...settings}>
 				{instrumentsData.map((instrument) => (
 					<InstrumentDisplay

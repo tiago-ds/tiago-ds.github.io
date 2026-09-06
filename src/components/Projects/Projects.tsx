@@ -9,21 +9,26 @@ interface IProjectCard {
 
 const ProjectCard: React.FC<IProjectCard> = ({ project }) => {
 	return (
-		<div className="project-card d-flex flex-column flex-md-row">
-			<a href={project.url} target="_blank" rel="noopener noreferrer">
+		<div className="project-card flex flex-col md:flex-row">
+			<a
+				className="shrink-0"
+				href={project.url}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				<img src={project.icon} alt={`${project.name} icon`} />
 			</a>
-			<div className="text-content d-flex flex-column">
+			<div className="text-content flex min-w-0 flex-col text-left md:ml-5">
 				{/* Sibling, not nested: an <a> inside an <a> is invalid HTML. */}
-				<div className="header d-flex flex-row align-items-baseline gap-2">
-					<h3 className="title mt-2 mt-md-0">
+				<div className="header flex flex-row items-baseline gap-2">
+					<h3 className="font-title mt-2 text-base font-bold uppercase md:mt-0">
 						<a
 							href={project.url}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							{project.name}{" "}
-							<span className="year text">{`(${project.year})`}</span>
+							<span className="text-xs font-bold">{`(${project.year})`}</span>
 						</a>
 					</h3>
 					<a
@@ -35,7 +40,7 @@ const ProjectCard: React.FC<IProjectCard> = ({ project }) => {
 						<i className="bi bi-github" />
 					</a>
 				</div>
-				<p className="description">{project.description}</p>
+				<p className="mt-0 text-left text-xs">{project.description}</p>
 			</div>
 		</div>
 	);
@@ -43,8 +48,8 @@ const ProjectCard: React.FC<IProjectCard> = ({ project }) => {
 
 const Projects = () => {
 	return (
-		<BaseCard title="Projects" mainCard className="m-5">
-			<div className="projects-container flex-column flex-md-row mt-3 mt-md-5">
+		<BaseCard title="Projects" mainCard className="m-4 md:m-12">
+			<div className="projects-container mt-4 md:mt-12">
 				{projects.map((project) => (
 					<ProjectCard key={project.name} project={project} />
 				))}

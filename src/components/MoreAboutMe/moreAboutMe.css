@@ -20,8 +20,8 @@
 	> * {
 		border-radius: 2rem;
 
-		color: var(--color-text-title);
-		background-color: var(--color-card-bg);
+		color: var(--color-title);
+		background-color: var(--color-card);
 		height: 100%;
 	}
 }
@@ -33,7 +33,7 @@
 		grid-template-rows: repeat(6, 90px);
 
 		gap: 1.5rem;
-		max-width: var(--content-max-width);
+		max-width: var(--container-content);
 	}
 
 	.now-playing-container {

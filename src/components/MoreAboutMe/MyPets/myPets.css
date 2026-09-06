@@ -1,7 +1,0 @@
-.pet-image {
-	border: 3px solid var(--color-text-title);
-	width: 125px;
-	height: 125px;
-
-	object-fit: cover;
-}

@@ -3,7 +3,6 @@ import BaseCard from "../../shared/BaseCard";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./myPets.css";
 
 import { type Pet, petsData } from "../../../data/pets";
 
@@ -13,13 +12,13 @@ interface IPetDisplayProps {
 
 const PetDisplay: React.FC<IPetDisplayProps> = ({ pet }) => {
 	return (
-		<div className="d-flex flex-column align-items-center ">
+		<div className="flex flex-col items-center">
 			<img
 				src={pet.image}
 				alt={pet.name}
-				className="rounded-circle pet-image"
+				className="border-title h-[125px] w-[125px] rounded-full border-[3px] object-cover"
 			/>
-			<p className="mt-3 title text-uppercase fw-bold">{pet.name}</p>
+			<p className="font-title mt-4 font-bold uppercase">{pet.name}</p>
 		</div>
 	);
 };

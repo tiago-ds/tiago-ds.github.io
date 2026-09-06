@@ -6,8 +6,8 @@ import "./moreAboutMe.css";
 
 export function MoreAboutMe() {
 	return (
-		<div className="css-grid-collage-container m-5">
-			<h1 className="visually-hidden">More about me</h1>
+		<div className="css-grid-collage-container m-4 md:m-12">
+			<h1 className="sr-only">More about me</h1>
 
 			<div className="grid-item now-playing-container">
 				<NowPlaying />

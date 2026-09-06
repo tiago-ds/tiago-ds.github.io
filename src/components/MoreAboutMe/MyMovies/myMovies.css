@@ -1,52 +1,10 @@
-.movies-container {
-	height: 100%;
-	font-size: 0.75rem;
-
-	.movie {
-		font-size: 0.75rem;
-		text-align: center;
-		height: calc(50% - 1.5rem);
-		width: auto;
-		justify-content: space-between;
-
-		a {
-			color: var(--color-text-title);
-		}
-
-		img {
-			object-fit: contain;
-			height: 85%;
-		}
-
-		.movie-description {
-			font-size: 0.75rem;
-			text-align: justify;
-			color: var(--color-text-regular);
-		}
-	}
+.movies-container .movie {
+	height: calc(50% - 1.5rem);
 }
 
-/* On a phone the poster had no width limit, so it took the whole row and
-   squeezed the text into a one-character column. Cap the poster and let the
-   text column shrink (flex children also default to min-width: auto). */
-@media (max-width: 767px) {
-	.movies-container .movie {
-		align-items: center;
-	}
-
+@media (min-width: 768px) {
 	.movies-container .movie img {
-		height: auto;
-		max-height: 150px;
-		max-width: 40%;
+		height: 85%;
+		object-fit: contain;
 	}
-
-	.movies-container .movie > div {
-		min-width: 0;
-	}
-}
-
-/* Inline anchors collapse to a 14px line box; pad them into a tappable row. */
-.movies-container .movie a {
-	display: inline-block;
-	padding: 5px 0;
 }

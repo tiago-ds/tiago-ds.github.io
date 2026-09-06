@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./nowPlaying.css";
 import BaseCard from "../../shared/BaseCard";
 import { createSpotifyTrackURL } from "../../../utils/utils";
 
@@ -58,38 +57,38 @@ export default function NowPlaying() {
 
 	return (
 		<BaseCard
-			className="d-flex flex-column"
+			className="flex flex-col"
 			title={"I'm currently listening to.."}
 		>
 			{state.status === "loading" && (
-				<div className="align-self-center" role="status">
+				<div className="self-center" role="status">
 					{"Waking up my track service.."}
 				</div>
 			)}
 
 			{state.status === "error" && (
-				<div className="align-self-center" role="status">
+				<div className="self-center" role="status">
 					{"Unable to connect to my track service! :("}
 				</div>
 			)}
 
 			{state.status === "ready" && (
-				<div className="flex-column">
+				<div className="flex-col">
 					<img
 						alt={`${state.track.albumName} cover art, by ${state.track.artistName}`}
-						className="rounded-circle w-100 mt-3"
+						className="mt-4 w-full rounded-full"
 						src={state.track.albumCoverURL}
 					/>
 					<a
 						href={createSpotifyTrackURL(state.track.id)}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="text-decoration-none music-link"
+						className="text-title no-underline"
 					>
-						<div className="d-flex flex-column justify-content-center align-items-center mt-5">
-							<h3 className="fs-2">{state.track.trackName}</h3>
-							<h4 className="fs-3">{state.track.artistName}</h4>
-							<i className="bi bi-play-circle play-icon" />
+						<div className="mt-12 flex flex-col items-center justify-center">
+							<h3 className="text-[min(2rem,calc(1.325rem+0.9vw))]">{state.track.trackName}</h3>
+							<h4 className="text-[min(1.75rem,calc(1.3rem+0.6vw))]">{state.track.artistName}</h4>
+							<i className="bi bi-play-circle mt-2 block text-[2.5rem] leading-none" />
 						</div>
 					</a>
 				</div>

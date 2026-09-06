@@ -12,7 +12,7 @@ function App() {
 			<header>
 				<NavComponent />
 			</header>
-			<main className="d-flex justify-content-center">
+			<main className="flex justify-center">
 				<AppRoutes />
 			</main>
 		</HashRouter>

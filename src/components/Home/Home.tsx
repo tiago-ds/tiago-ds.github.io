@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import myPicture from "../../assets/me.jpg";
 import useTapSequence from "../../hooks/useTapSequence";
 import { SECRET_PATH, SECRET_TAPS } from "../../secret";
-import "./home.css";
 
 export default function Home() {
 	const navigate = useNavigate();
@@ -12,14 +11,14 @@ export default function Home() {
 	const handleTap = useTapSequence(SECRET_TAPS, () => navigate(SECRET_PATH));
 
 	return (
-		<div className="main-section d-flex flex-column-reverse flex-lg-row align-items-center m-5 gap-5 rounded-5 p-5">
-			<div className="text-section d-flex flex-column m-1">
-				<h1 className="title-text d-flex flex-column">
+		<div className="bg-card m-4 flex max-w-[var(--container-content)] flex-col-reverse items-center gap-12 justify-self-center rounded-[2rem] p-5 md:m-12 md:p-12 lg:flex-row">
+			<div className="m-1 flex flex-col">
+				<h1 className="font-title text-title flex flex-col text-left text-base font-bold uppercase md:text-[2.5rem]">
 					<span>Hello! I am Tiago,</span>
 					<span>Fullstack Developer</span>
 				</h1>
 
-				<p className="regular-text">
+				<p className="font-body text-regular text-justify text-xs font-normal md:text-2xl">
 					I have a passion for creating and developing web
 					applications. I am currently engaged in a bachelor&apos;s for
 					Computer Science and I like to learn new technologies. Also,
@@ -27,7 +26,7 @@ export default function Home() {
 				</p>
 			</div>
 			<img
-				className="profile-image"
+				className="w-[150px] rounded-full md:w-[270px] xl:w-[350px]"
 				onClick={handleTap}
 				alt="Tiago's Picture. He has a purple fringe, and is using a black jacket.
           He has a small smile, and the background of the picture has golden lights"

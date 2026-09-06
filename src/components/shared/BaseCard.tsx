@@ -14,18 +14,21 @@ const BaseCard: React.FC<IBaseCardProps> = ({
 	className,
 }) => {
 	return (
-		<section className={`base-card p-5 rounded-5 ${className || ""}`}>
-			{/* fs-* keeps the previous h2/h5 sizing. */}
+		<section
+			className={`bg-card text-title max-h-fit w-full max-w-[min(100%,var(--container-content))] justify-self-center rounded-[2rem] p-5 md:p-12 ${
+				className || ""
+			}`}
+		>
 			{mainCard ? (
-				<h1 className="text-start text-uppercase fw-semibold title fs-2">
+				<h1 className="font-title text-left text-[min(2rem,calc(1.325rem+0.9vw))] font-semibold uppercase">
 					{title}
 				</h1>
 			) : (
-				<h2 className="mb-3 fw-semibold text-uppercase title fs-5">
+				<h2 className="font-title mb-4 text-xl font-semibold uppercase">
 					{title}
 				</h2>
 			)}
-			<div className="h-100">{children}</div>
+			<div className="h-full">{children}</div>
 		</section>
 	);
 };

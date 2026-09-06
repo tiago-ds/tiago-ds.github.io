@@ -1,68 +1,40 @@
-html {
-	background-color: var(--color-background);
-}
+@import "tailwindcss";
 
-:root {
-	line-height: 1.6;
-	font-weight: 400;
-
-	--content-max-width: 1280px;
-
+/* The palette and fonts as theme tokens, so they are available as real
+   utilities (bg-background, text-title, font-title) instead of only as vars. */
+@theme {
 	--font-title: "Reem Kufi Fun", sans-serif;
 	--font-body: "Tajawal", sans-serif;
 
-	--color-text-title: #3d1860;
-	--color-text-regular: #643579;
-	--color-card-bg: #9ef4e642;
+	--color-title: #3d1860;
+	--color-regular: #643579;
+	--color-card: #9ef4e642;
 	--color-background: #bb99cd;
+
+	--container-content: 1280px;
 }
 
-.w-fit-content {
-	width: fit-content !important;
-}
-
-.regular-text {
-	font-family: var(--font-body);
-	font-size: 0.75rem;
+html {
+	background-color: var(--color-background);
+	line-height: 1.6;
 	font-weight: 400;
-	font-style: normal;
-	text-align: justify;
-
-	color: var(--color-text-regular);
 }
 
-.base-card {
-	background-color: var(--color-card-bg);
-	color: var(--color-text-title);
-
-	width: 100%;
-	max-width: min(100%, var(--content-max-width));
-	max-height: fit-content;
-
-	justify-self: center;
-
-	.title {
-		font-family: var(--font-title);
-	}
-}
-
-/* Bootstrap's spacing utilities are a flat 3rem at every screen size, so on a
-   390px phone the m-5 + p-5 pair ate 207px (53%) of the viewport and left 183px
-   of usable width. These need !important and a compound selector because the
-   Bootstrap utilities are themselves !important. */
-@media (max-width: 767px) {
-	.main-section.m-5,
-	.base-card.m-5,
-	.css-grid-collage-container.m-5 {
-		margin: 1rem !important;
+/* Tailwind's preflight strips the heading/paragraph margins and weights that
+   Bootstrap's reboot supplied, which collapsed the spacing everywhere. These
+   restore the same defaults so the typography matches what it replaced. */
+@layer base {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-bottom: 0.5rem;
+		font-weight: 500;
 	}
 
-	.base-card.mt-5 {
-		margin: 1rem !important;
-	}
-
-	.main-section.p-5,
-	.base-card.p-5 {
-		padding: 1.25rem !important;
+	p {
+		margin-bottom: 1rem;
 	}
 }

@@ -3,76 +3,21 @@
 	flex-wrap: wrap;
 	gap: 20px;
 	justify-content: space-around;
-	max-width: 1280px;
-
-	.project-card {
-		flex: 0 0 calc(50% - 10px);
-
-		img {
-			width: 100px;
-		}
-
-		.text-content {
-			margin-left: 20px;
-			color: var(--color-text-title);
-
-			a {
-				color: var(--color-text-title);
-				text-decoration: none;
-				font-weight: 700;
-			}
-
-			.header {
-				font-family: var(--font-title);
-
-				.year {
-					font-size: 0.75rem;
-				}
-
-				.title {
-					font-size: 1rem;
-					font-weight: 700;
-					font-style: normal;
-					text-transform: uppercase;
-				}
-			}
-
-			.description {
-				font-size: 0.75rem;
-				margin-top: 0;
-			}
-		}
-	}
+	max-width: var(--container-content);
 }
 
-@media (min-width: 768px) {
-	.project-card {
-		flex: 0 0 calc(50% - 10px);
+.projects-container .project-card {
+	flex: 0 0 calc(50% - 10px);
+}
 
-		img {
-			width: 150px;
-		}
+.projects-container .project-card img {
+	width: 100px;
+}
 
-		.text-content {
-			margin-left: 20px;
-
-			.header {
-				.year {
-					font-size: 1rem;
-				}
-
-				.title {
-					font-size: 1.5rem;
-				}
-			}
-
-			.description {
-				font-size: 1rem;
-				margin-top: 0;
-				text-align: left;
-			}
-		}
-	}
+.projects-container a {
+	color: var(--color-title);
+	text-decoration: none;
+	font-weight: 700;
 }
 
 /* The github glyph is a 16px icon; pad it out to a finger-sized target. */
@@ -84,3 +29,7 @@
 	min-height: 44px;
 	margin: -10px 0;
 }
+
+/* The original stylesheet bumped this to 150px at >=768px, but that rule sat
+   at a lower specificity than the base one and never actually applied, so the
+   site has always shown 100px. Kept as shipped. */
