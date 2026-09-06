@@ -39,7 +39,7 @@ export const hiddenProjects: Array<HiddenProject> = [
 	},
 	{
 		description:
-			"A gallery for a computational creativity course, pairing K-pop imagery with style-transfer experiments from the companion notebook.",
+			"A gallery for a computational creativity course, using song measurements to pair K-pop imagery with style-transfer experiments automatically, from the companion notebook.",
 		github: "https://github.com/tiago-ds/kpopifier",
 		icon: "bi-palette",
 		name: "Kpopifier",
