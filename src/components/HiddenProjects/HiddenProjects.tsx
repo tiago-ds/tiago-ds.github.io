@@ -50,9 +50,10 @@ const HiddenProjectCard: React.FC<IHiddenProjectCard> = ({ project }) => {
 
 export default function HiddenProjects() {
 	return (
-		<BaseCard title="You found it" mainCard className="m-5">
+		<BaseCard title="You found it!" mainCard className="m-5">
 			<p className="regular-text intro mt-3">
-				A few things that never made it onto the projects page.
+				A few projects that I like, but won&apos;t go to the projects
+				page.
 			</p>
 
 			<ul className="hidden-projects-container mt-3 mt-md-4">
