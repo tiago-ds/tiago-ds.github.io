@@ -48,7 +48,7 @@ export const projects: Array<Project> = [
 		icon: TicTacToeIcon,
 		github: "https://github.com/tiago-ds/tic-tac-toe",
 		name: "My custom tic-tac-toe",
-		url: "https://github.com/tiago-ds/tic-tac-toe",
+		url: "https://tiago-ds.github.io/tic-tac-toe/",
 		year: "2024",
 	},
 	{
