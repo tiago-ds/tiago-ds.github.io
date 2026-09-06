@@ -62,7 +62,7 @@ export const projects: Array<Project> = [
 	},
 	{
 		description:
-			"A React-based web application that quizzes users on Pokémon trivia, testing their knowledge of the Pokémon universe in a fun and interactive way.",
+			"An Angular-based web application that quizzes users on Pokémon trivia, testing their knowledge of the Pokémon universe in a fun and interactive way.",
 		icon: PokequizIcon,
 		github: "https://github.com/tiago-ds/poke-quiz-ui",
 		name: "Poke Quiz",
