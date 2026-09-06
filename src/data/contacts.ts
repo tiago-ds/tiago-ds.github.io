@@ -22,6 +22,6 @@ export const contacts: Array<ContactType> = [
 	{
 		icon: MailIcon,
 		name: "Email",
-		url: "mailto:tiiagoscs@gmail.com",
+		url: "mailto:tiago.campelo.dev@gmail.com",
 	},
 ];
