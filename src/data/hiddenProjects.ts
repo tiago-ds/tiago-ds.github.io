@@ -37,4 +37,13 @@ export const hiddenProjects: Array<HiddenProject> = [
 		url: "https://tiago-ds.github.io/P5Js-Experiments/",
 		year: "2022",
 	},
+	{
+		description:
+			"A gallery for a computational creativity course, pairing K-pop imagery with style-transfer experiments from the companion notebook.",
+		github: "https://github.com/tiago-ds/kpopifier",
+		icon: "bi-palette",
+		name: "Kpopifier",
+		url: "https://tiago-ds.github.io/kpopifier-github-io/",
+		year: "2022",
+	},
 ];
