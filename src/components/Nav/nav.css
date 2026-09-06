@@ -35,12 +35,17 @@
    than wrap, so the bar stays one row. Vertical padding is untouched, which
    keeps each link comfortably above the 44px tap-target guideline. */
 @media (max-width: 575px) {
-  .nav-bar {
+  /* .nav-bar.d-flex outweighs Bootstrap's .gap-3, which is itself !important
+     and would otherwise win on load order. */
+  .nav-bar.d-flex {
     font-size: 13px;
     gap: 0 !important;
   }
 
+  /* The bar is a flex row that never wraps, so without nowrap the items shrink
+     below their text and "About Me" breaks onto a second line. */
   .nav-bar a {
-    padding: 0.825rem 0.6rem;
+    padding: 0.825rem 0.55rem;
+    white-space: nowrap;
   }
 }
