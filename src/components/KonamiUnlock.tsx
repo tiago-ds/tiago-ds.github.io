@@ -2,8 +2,7 @@ import { useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import useKonamiCode from "../hooks/useKonamiCode";
-
-const SECRET_PATH = "/secret";
+import { SECRET_PATH } from "../secret";
 
 // Lives inside the router so it can navigate. Renders nothing.
 export default function KonamiUnlock() {

@@ -1,7 +1,16 @@
+import { useNavigate } from "react-router-dom";
+
 import myPicture from "../../assets/me.jpg";
+import useTapSequence from "../../hooks/useTapSequence";
+import { SECRET_PATH, SECRET_TAPS } from "../../secret";
 import "./home.css";
 
 export default function Home() {
+	const navigate = useNavigate();
+
+	// The way in on a phone, where the Konami code cannot be typed.
+	const handleTap = useTapSequence(SECRET_TAPS, () => navigate(SECRET_PATH));
+
 	return (
 		<div className="main-section d-flex flex-column-reverse flex-lg-row align-items-center m-5 gap-5 rounded-5 p-5">
 			<div className="text-section d-flex flex-column m-1">
@@ -19,6 +28,7 @@ export default function Home() {
 			</div>
 			<img
 				className="profile-image"
+				onClick={handleTap}
 				alt="Tiago's Picture. He has a purple fringe, and is using a black jacket.
           He has a small smile, and the background of the picture has golden lights"
 				src={myPicture}
