@@ -1,5 +1,9 @@
 import BaseCard from "../shared/BaseCard";
-import { hiddenProjects, type HiddenProject } from "../../data/hiddenProjects";
+import {
+	hiddenProjects,
+	hiddenSections,
+	type HiddenProject,
+} from "../../data/hiddenProjects";
 
 interface IHiddenProjectCard {
 	project: HiddenProject;
@@ -53,15 +57,24 @@ export default function HiddenProjects() {
 	return (
 		<BaseCard title="You found it!" mainCard className="m-4 md:m-12">
 			<p className="text-regular font-body intro mt-4 text-justify text-xs md:text-base">
-				A few projects that I like, but won&apos;t go to the projects
-				page.
+				Games and experiments I made for fun.
 			</p>
 
-			<ul className="mt-4 flex list-none flex-col gap-5 p-0 text-left md:mt-6 md:gap-7">
-				{hiddenProjects.map((project) => (
-					<HiddenProjectCard key={project.name} project={project} />
-				))}
-			</ul>
+			{hiddenSections.map((section) => (
+				<section key={section.id} className="mt-6 md:mt-10">
+					<h2 className="font-title text-title m-0 text-left text-lg font-semibold uppercase md:text-[1.75rem]">
+						{section.title}
+					</h2>
+
+					<ul className="mt-4 flex list-none flex-col gap-5 p-0 text-left md:mt-6 md:gap-7">
+						{hiddenProjects
+							.filter((project) => project.section === section.id)
+							.map((project) => (
+								<HiddenProjectCard key={project.name} project={project} />
+							))}
+					</ul>
+				</section>
+			))}
 		</BaseCard>
 	);
 }
