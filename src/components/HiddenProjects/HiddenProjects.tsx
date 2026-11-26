@@ -1,9 +1,6 @@
 import BaseCard from "../shared/BaseCard";
-import {
-	hiddenProjects,
-	hiddenSections,
-	type HiddenProject,
-} from "../../data/hiddenProjects";
+import { hiddenProjects, type HiddenProject } from "../../data/hiddenProjects";
+import ArcadeGames from "./ArcadeGames";
 
 interface IHiddenProjectCard {
 	project: HiddenProject;
@@ -53,6 +50,9 @@ const HiddenProjectCard: React.FC<IHiddenProjectCard> = ({ project }) => {
 	);
 };
 
+const SECTION_TITLE =
+	"font-title text-title m-0 text-left text-lg font-semibold uppercase md:text-[1.75rem]";
+
 export default function HiddenProjects() {
 	return (
 		<BaseCard title="You found it!" mainCard className="m-4 md:m-12">
@@ -60,21 +60,20 @@ export default function HiddenProjects() {
 				Games and experiments I made for fun.
 			</p>
 
-			{hiddenSections.map((section) => (
-				<section key={section.id} className="mt-6 md:mt-10">
-					<h2 className="font-title text-title m-0 text-left text-lg font-semibold uppercase md:text-[1.75rem]">
-						{section.title}
-					</h2>
+			<section className="mt-6 md:mt-10">
+				<h2 className={SECTION_TITLE}>Games</h2>
+				<ArcadeGames />
+			</section>
 
-					<ul className="mt-4 flex list-none flex-col gap-5 p-0 text-left md:mt-6 md:gap-7">
-						{hiddenProjects
-							.filter((project) => project.section === section.id)
-							.map((project) => (
-								<HiddenProjectCard key={project.name} project={project} />
-							))}
-					</ul>
-				</section>
-			))}
+			<section className="mt-6 md:mt-10">
+				<h2 className={SECTION_TITLE}>Experiments</h2>
+
+				<ul className="mt-4 flex list-none flex-col gap-5 p-0 text-left md:mt-6 md:gap-7">
+					{hiddenProjects.map((project) => (
+						<HiddenProjectCard key={project.name} project={project} />
+					))}
+				</ul>
+			</section>
 		</BaseCard>
 	);
 }

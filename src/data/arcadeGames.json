@@ -1,0 +1,92 @@
+[
+	{
+		"id": "daily-chord",
+		"name": "Daily Chord",
+		"url": "https://tiago-ds.github.io/arcade/games/daily-chord/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/daily-chord.svg",
+		"description": {
+			"en": "Hear a chord, name it in six tries.",
+			"pt": "Ouça um acorde e descubra qual é em seis tentativas."
+		}
+	},
+	{
+		"id": "internal-clock",
+		"name": "Internal Clock",
+		"url": "https://tiago-ds.github.io/arcade/games/internal-clock/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/internal-clock.svg",
+		"description": {
+			"en": "Hold for the exact time. No timer, one try a day.",
+			"pt": "Segure pelo tempo exato. Sem cronômetro, uma tentativa por dia."
+		}
+	},
+	{
+		"id": "tune-in",
+		"name": "Tune In",
+		"url": "https://tiago-ds.github.io/arcade/games/tune-in/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/tune-in.svg",
+		"description": {
+			"en": "Write a theme, give a clue, and find the spot on the dial. Two teams, or one.",
+			"pt": "Escreva um tema, dê uma dica e encontre o ponto certo. Dois times, ou um."
+		}
+	},
+	{
+		"id": "hue-know",
+		"name": "Hue Know",
+		"url": "https://tiago-ds.github.io/arcade/games/hue-know/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/hue-know.svg",
+		"description": {
+			"en": "Clue a paint chip in one word, then two. A colour game for two.",
+			"pt": "Dê dicas de uma cor em uma palavra, depois em duas. Um jogo de cores para dois."
+		}
+	},
+	{
+		"id": "blink",
+		"name": "Blink",
+		"url": "https://tiago-ds.github.io/arcade/games/blink/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/blink.svg",
+		"description": {
+			"en": "A reaction duel for two: press when it turns blue, not before.",
+			"pt": "Um duelo de reflexo para dois: aperte quando ficar azul, não antes."
+		}
+	},
+	{
+		"id": "frankendoodle",
+		"name": "Frankendoodle",
+		"url": "https://tiago-ds.github.io/arcade/games/frankendoodle/",
+		"group": "arcade",
+		"icon": "https://tiago-ds.github.io/arcade/icons/frankendoodle.svg",
+		"description": {
+			"en": "Draw a creature one part at a time, each of you seeing only where the last part ends. For 2 to 5.",
+			"pt": "Desenhem uma criatura uma parte de cada vez, cada um vendo só onde a anterior termina. De 2 a 5."
+		}
+	},
+	{
+		"id": "poke-quiz",
+		"name": "Poke Quiz",
+		"url": "https://tiago-ds.github.io/poke-quiz-ui/",
+		"group": "older",
+		"icon": "https://tiago-ds.github.io/arcade/icons/poke-quiz.svg",
+		"description": {
+			"en": "Five Pokémon silhouettes a day, the same for everyone.",
+			"pt": "Cinco silhuetas de Pokémon por dia, as mesmas para todo mundo."
+		},
+		"github": "https://github.com/tiago-ds/poke-quiz-ui"
+	},
+	{
+		"id": "tic-tac-toe",
+		"name": "Tic-tac-toe",
+		"url": "https://tiago-ds.github.io/tic-tac-toe/",
+		"group": "older",
+		"icon": "https://tiago-ds.github.io/arcade/icons/tic-tac-toe.svg",
+		"description": {
+			"en": "Three pieces each: placing a fourth removes your oldest.",
+			"pt": "Três peças para cada um: a quarta tira a mais antiga."
+		},
+		"github": "https://github.com/tiago-ds/tic-tac-toe"
+	}
+]

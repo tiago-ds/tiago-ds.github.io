@@ -21,7 +21,14 @@ npm run dev        # start the dev server
 npm run lint       # eslint
 npm run typecheck  # tsc
 npm run build      # typecheck + production build
-npm run deploy     # publish dist/ to GitHub Pages
 ```
+
+Pushing to `main` deploys: a GitHub Actions workflow
+(`.github/workflows/deploy.yml`) lints, builds and publishes `dist/` to
+GitHub Pages. Pull requests run the same checks without deploying.
+
+The games on the hidden `/#/secret` page come from the
+[arcade](https://github.com/tiago-ds/arcade), which publishes its list as
+`games.json`; `src/data/arcadeGames.json` is the copy shown if that fetch fails.
 
 <small>Artdesign by [Ana Brito](https://www.behance.net/anaviibrito)</small>
